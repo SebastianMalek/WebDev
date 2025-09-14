@@ -140,10 +140,10 @@ ul {
 }
 
 /* Kontakt */
-address {
-  font-style: normal;
-  margin: 0 0 8px;
-}
+#kontakt { text-align: center; }
+#kontakt + address, #kontakt + address + p { text-align: center; }
+.contact-form { max-width: 640px; margin: 8px auto 0; }
+.contact-form .actions { display:flex; justify-content:center; }
 
 /* Formularz */
 .contact-form {
@@ -363,3 +363,4 @@ section {
   height: 0;
   overflow: hidden;
 }
+
