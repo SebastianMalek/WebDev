@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sebastian Małek – Strony WWW</title>
+    <meta
+      name="description"
+      content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
+    />
+
+    <link rel="canonical" href="https://twojadomena.pl/" />
+
+    <meta
+      property="og:title"
+      content="Sebastian Małek – Strony WWW w WordPressie"
+    />
+    <meta
+      property="og:description"
+      content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://twojadomena.pl/" />
+    <meta property="og:image" content="https://twojadomena.pl/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sebastian Małek",
+        "jobTitle": "Web Developer (WordPress)",
+        "url": "https://twojadomena.pl/",
+        "email": "mailto:t90090178@gmail.com",
+        "telephone": "+48605637077"
+      }
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip">Przejdź do treści</a>
+
+    <header>
+      <div class="container">
+        <h1>Sebastian Małek</h1>
+        <p class="lead">
+          Tworzę <strong>strony WWW w WordPressie</strong> dla małych firm –
+          szybko, czytelnie i pod SEO.
+        </p>
+        <nav class="nav" aria-label="Główna">
+          <a class="nav-link" href="#o-mnie">O mnie</a> ·
+          <a class="nav-link" href="#oferta">Pakiety</a> ·
+          <a class="nav-link" href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="hero-cta">
+          <a class="btn" href="#oferta">Zobacz pakiety</a>
+          <a class="btn btn--ghost" href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container grid grid-2">
+        <section aria-labelledby="o-mnie">
+          <h2 id="o-mnie">O mnie</h2>
+          <p>
+            Cześć! Jestem Sebastian. Łączę estetykę z prostotą obsługi, aby
+            Twoja strona działała <em>szybko</em> i była zrozumiała dla
+            klientów.
+          </p>
+          <p class="muted">
+            Gram na gitarze, czytam sporo książek i lubię dobrać technologicznie
+            proste rozwiązania, które robią robotę.
+          </p>
+
+          <h3>W czym pomagam?</h3>
+          <ul>
+            <li>Projekt i wdrożenie strony na <strong>WordPressie</strong>.</li>
+            <li>
+              Skonfigurowanie formularzy, mapy, podstawowego SEO i analityki.
+            </li>
+            <li>Optymalizacja szybkości + krótkie szkolenie z obsługi.</li>
+          </ul>
+
+          <h2 id="kontakt">Kontakt</h2>
+          <address>☎️ <a href="tel:+48605637077">+48 605 637 077</a></address>
+          <p>
+            ✉️
+            <a
+              class="btn"
+              href="mailto:t90090178@gmail.com?subject=Wycena%20strony%20WWW&body=Cześć%20Sebastianie,%0A%0ANazwa%20firmy:%0AZakres:%20(Wizytówka%20/%20Standard%20/%20Sklep)%0ATermin:%0ABudżet:%0A%0APozdrawiam,"
+              aria-label="Umów wycenę strony e-mailem"
+              >Umów wycenę</a
+            >
+          </p>
+
+          <!-- Formularz HTML-only (demo). Produkcyjnie podłączymy backend/WordPress. -->
+          <form
+            class="contact-form"
+            action="mailto:t90090178@gmail.com"
+            method="POST"
+            enctype="text/plain"
+          >
+            <div class="field">
+              <label for="name">Imię i nazwisko</label>
+              <input
+                id="name"
+                name="Imię i nazwisko"
+                type="text"
+                placeholder="Jan Kowalski"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input
+                id="email"
+                name="E-mail"
+                type="email"
+                placeholder="jan@firma.pl"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input
+                id="phone"
+                name="Telefon"
+                type="tel"
+                inputmode="tel"
+                placeholder="+48 600 000 000"
+                pattern="^[0-9+ ()-]{6,}$"
+              />
+            </div>
+            <div class="field">
+              <label for="type">Rodzaj projektu</label>
+              <select id="type" name="Rodzaj projektu">
+                <option>Wizytówka (EKO)</option>
+                <option>Strona firmowa (STANDARD)</option>
+                <option>Sklep internetowy (SKLEP)</option>
+                <option>Inne / nie wiem</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="msg">Opis / cele</label>
+              <textarea
+                id="msg"
+                name="Wiadomość"
+                rows="5"
+                placeholder="Kilka słów o firmie i celu strony..."
+              ></textarea>
+            </div>
+            <input
+              type="hidden"
+              name="Temat"
+              value="Zapytanie przez formularz – strona WWW"
+            />
+            <div class="actions">
+              <button class="btn" type="submit">Wyślij zapytanie</button>
+            </div>
+            <p class="muted small">
+              Uwaga: formularz wysyła wiadomość przez klienta poczty (mailto). W
+              WordPressie podłączymy profesjonalną wysyłkę.
+            </p>
+          </form>
+        </section>
+
+        <aside>
+          <figure>
+            <img
+              src="https://picsum.photos/640/420"
+              alt="Przykładowy projekt strony WWW dla małej firmy usługowej – sekcja oferty i CTA"
+              width="640"
+              height="420"
+              loading="lazy"
+            />
+            <figcaption>
+              Makieta landing page: wyraźny nagłówek, lista korzyści i widoczny
+              przycisk „Umów wycenę”.
+            </figcaption>
+          </figure>
+        </aside>
+      </div>
+
+      <section id="oferta" aria-labelledby="pakiety" class="container">
+        <h2 id="pakiety">Pakiety</h2>
+
+        <div class="cards">
+          <article class="card" aria-labelledby="p-eko">
+            <h3 id="p-eko">EKO</h3>
+            <p class="desc">
+              Szybka wizytówka dla startujących firm. Prosty układ, kluczowe
+              sekcje i kontakt — bez zbędnych bajerów.
+            </p>
+            <p class="price"><span>1997</span> zł</p>
+            <ul class="features">
+              <li>Do 5 podstron</li>
+              <li>Formularz kontaktowy</li>
+              <li>Mapa Google</li>
+            </ul>
+            <a
+              class="btn"
+              href="mailto:t90090178@gmail.com?subject=Zapytanie%20o%20pakiet%20EKO&body=Cześć,%0AInteresuje%20mnie%20pakiet%20EKO.%0ANazwa%20firmy:%0AZakres:%0ATermin:%0ABudżet:%0A"
+              aria-label="Zapytanie o pakiet EKO"
+              >Wybieram EKO</a
+            >
+          </article>
+
+          <article class="card card--featured" aria-labelledby="p-std">
+            <div class="badge" aria-hidden="true">Najlepszy wybór</div>
+            <h3 id="p-std">STANDARD</h3>
+            <p class="desc">
+              Dla rozwijających się firm. Więcej sekcji, rozbudowa treści i
+              elementy zaufania (referencje, case studies).
+            </p>
+            <p class="price"><span>2897</span> zł</p>
+            <ul class="features">
+              <li>Wszystko z EKO</li>
+              <li>Do 10 podstron</li>
+              <li>Do 5 skrzynek e-mail</li>
+              <li>Wizytówka Google</li>
+            </ul>
+            <a
+              class="btn"
+              href="mailto:t90090178@gmail.com?subject=Zapytanie%20o%20pakiet%20STANDARD&body=Cześć,%0AInteresuje%20mnie%20pakiet%20STANDARD.%0ANazwa%20firmy:%0AZakres:%0ATermin:%0ABudżet:%0A"
+              aria-label="Zapytanie o pakiet STANDARD"
+              >Wybieram STANDARD</a
+            >
+          </article>
+
+          <article class="card" aria-labelledby="p-sklep">
+            <h3 id="p-sklep">SKLEP</h3>
+            <p class="desc">
+              Sprzedaż online na WordPress + WooCommerce. Płatności, wysyłka i
+              prosta obsługa zamówień.
+            </p>
+            <p class="price"><span>4997</span> zł</p>
+            <ul class="features">
+              <li>Wszystko ze STANDARD</li>
+              <li>WooCommerce + płatności</li>
+              <li>Integracja kuriera</li>
+            </ul>
+            <a
+              class="btn"
+              href="mailto:t90090178@gmail.com?subject=Zapytanie%20o%20pakiet%20SKLEP&body=Cześć,%0AInteresuje%20mnie%20pakiet%20SKLEP.%0ANazwa%20firmy:%0AZakres:%0ATermin:%0ABudżet:%0A"
+              aria-label="Zapytanie o pakiet SKLEP"
+              >Wybieram SKLEP</a
+            >
+          </article>
+        </div>
+
+        <p class="note muted">
+          Ceny dotyczą typowych wdrożeń. Szczegóły ustalamy po krótkiej
+          rozmowie.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="y">2025</span> Sebastian Małek ·
+          <a href="#kontakt">Kontakt</a>
+        </p>
+      </div>
+    </footer>
+
+    <script defer src="main.js"></script>
+  </body>
+</html>
