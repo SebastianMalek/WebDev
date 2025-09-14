@@ -271,29 +271,18 @@
 
       <form
         class="contact-form"
-        action="mailto:t90090178@gmail.com"
+        id="contact-form"
+        action="https://formspree.io/f/mgvlbewd"
         method="POST"
-        enctype="text/plain"
+        novalidate
       >
         <div class="field">
           <label for="name">Imię i nazwisko</label>
-          <input
-            id="name"
-            name="Imię i nazwisko"
-            type="text"
-            placeholder="Jan Kowalski"
-            required
-          />
+          <input id="name" name="Imię i nazwisko" type="text" required />
         </div>
         <div class="field">
           <label for="email">E-mail</label>
-          <input
-            id="email"
-            name="E-mail"
-            type="email"
-            placeholder="jan@firma.pl"
-            required
-          />
+          <input id="email" name="E-mail" type="email" required />
         </div>
         <div class="field">
           <label for="phone">Telefon</label>
@@ -302,7 +291,6 @@
             name="Telefon"
             type="tel"
             inputmode="tel"
-            placeholder="+48 600 000 000"
             pattern="^[0-9+ ()-]{6,}$"
           />
         </div>
@@ -317,25 +305,29 @@
         </div>
         <div class="field">
           <label for="msg">Opis / cele</label>
-          <textarea
-            id="msg"
-            name="Wiadomość"
-            rows="5"
-            placeholder="Kilka słów o firmie i celu strony..."
-          ></textarea>
+          <textarea id="msg" name="Wiadomość" rows="5"></textarea>
         </div>
-        <input
-          type="hidden"
-          name="Temat"
-          value="Zapytanie przez formularz – strona WWW"
-        />
+
+        <!-- Antyspam: honeypot (niewidoczne) -->
+        <div class="field hp" aria-hidden="true">
+          <label for="website">Twoja strona (zostaw puste)</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Dodatkowe meta -->
+        <input type="hidden" name="_subject" value="Zapytanie – strona WWW" />
+        <input type="hidden" name="_language" value="pl" />
+
         <div class="actions">
           <button class="btn" type="submit">Wyślij zapytanie</button>
         </div>
-        <p class="muted small">
-          Uwaga: formularz wysyła wiadomość przez klienta poczty (mailto). W
-          WordPressie podłączymy profesjonalną wysyłkę.
-        </p>
+        <p id="form-status" class="muted small" aria-live="polite"></p>
       </form>
     </main>
 
