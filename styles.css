@@ -140,10 +140,21 @@ ul {
 }
 
 /* Kontakt */
-#kontakt { text-align: center; }
-#kontakt + address, #kontakt + address + p { text-align: center; }
-.contact-form { max-width: 640px; margin: 8px auto 0; }
-.contact-form .actions { display:flex; justify-content:center; }
+#kontakt {
+  text-align: center;
+}
+#kontakt + address,
+#kontakt + address + p {
+  text-align: center;
+}
+.contact-form {
+  max-width: 640px;
+  margin: 8px auto 0;
+}
+.contact-form .actions {
+  display: flex;
+  justify-content: center;
+}
 
 /* Formularz */
 .contact-form {
@@ -364,3 +375,23 @@ section {
   overflow: hidden;
 }
 
+.contact-section {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+.contact-section address,
+.contact-section p {
+  text-align: center;
+}
+.contact-form {
+  max-width: 640px;
+  margin: 8px auto 0;
+  width: 100%;
+}
+.hp {
+  position: absolute;
+  left: -5000px;
+  height: 0;
+  overflow: hidden;
+}
