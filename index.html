@@ -9,9 +9,11 @@
       content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
     />
 
-    <link rel="canonical" href="https://SebastianMalek.github.io/WebDev/">
-<meta property="og:url" content="https://SebastianMalek.github.io/WebDev/">
-
+    <link rel="canonical" href="https://SebastianMalek.github.io/WebDev/" />
+    <meta
+      property="og:url"
+      content="https://SebastianMalek.github.io/WebDev/"
+    />
 
     <meta
       property="og:title"
@@ -39,7 +41,7 @@
     </script>
 
     <link rel="stylesheet" href="styles.css" />
-
+    <!-- było: /favicon.svg -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
     <link rel="alternate icon" href="/favicon.png" />
@@ -60,6 +62,8 @@
           <a class="nav-link" href="#o-mnie">O mnie</a> ·
           <a class="nav-link" href="#oferta">Pakiety</a> ·
           <a class="nav-link" href="#kontakt">Kontakt</a>
+          <a class="nav-link" href="#dlaczego">Dlaczego ja</a> ·
+          <a class="nav-link" href="#faq">FAQ</a> ·
         </nav>
 
         <div class="hero-cta">
@@ -103,76 +107,6 @@
               >Umów wycenę</a
             >
           </p>
-
-          <!-- Formularz HTML-only (demo). Produkcyjnie podłączymy backend/WordPress. -->
-          <form
-            class="contact-form"
-            action="mailto:t90090178@gmail.com"
-            method="POST"
-            enctype="text/plain"
-          >
-            <div class="field">
-              <label for="name">Imię i nazwisko</label>
-              <input
-                id="name"
-                name="Imię i nazwisko"
-                type="text"
-                placeholder="Jan Kowalski"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="email">E-mail</label>
-              <input
-                id="email"
-                name="E-mail"
-                type="email"
-                placeholder="jan@firma.pl"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="phone">Telefon</label>
-              <input
-                id="phone"
-                name="Telefon"
-                type="tel"
-                inputmode="tel"
-                placeholder="+48 600 000 000"
-                pattern="^[0-9+ ()-]{6,}$"
-              />
-            </div>
-            <div class="field">
-              <label for="type">Rodzaj projektu</label>
-              <select id="type" name="Rodzaj projektu">
-                <option>Wizytówka (EKO)</option>
-                <option>Strona firmowa (STANDARD)</option>
-                <option>Sklep internetowy (SKLEP)</option>
-                <option>Inne / nie wiem</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="msg">Opis / cele</label>
-              <textarea
-                id="msg"
-                name="Wiadomość"
-                rows="5"
-                placeholder="Kilka słów o firmie i celu strony..."
-              ></textarea>
-            </div>
-            <input
-              type="hidden"
-              name="Temat"
-              value="Zapytanie przez formularz – strona WWW"
-            />
-            <div class="actions">
-              <button class="btn" type="submit">Wyślij zapytanie</button>
-            </div>
-            <p class="muted small">
-              Uwaga: formularz wysyła wiadomość przez klienta poczty (mailto). W
-              WordPressie podłączymy profesjonalną wysyłkę.
-            </p>
-          </form>
         </section>
 
         <aside>
@@ -264,6 +198,145 @@
           rozmowie.
         </p>
       </section>
+
+      <section
+        id="dlaczego"
+        aria-labelledby="dlaczego-heading"
+        class="container"
+      >
+        <h2 id="dlaczego-heading">Dlaczego ze mną?</h2>
+        <div class="why">
+          <article class="why-card">
+            <h3>Szybkość i SEO</h3>
+            <p>
+              Strony ładujące się w <strong>&lt; 2 s</strong> i gotowe pod
+              Google: semantyka, meta, analityka.
+            </p>
+          </article>
+          <article class="why-card">
+            <h3>Prosty proces</h3>
+            <p>
+              Brief → makieta → wdrożenie → szkolenie. Jasne etapy i maks.
+              <strong>2 rundy poprawek</strong>.
+            </p>
+          </article>
+          <article class="why-card">
+            <h3>Wsparcie po wdrożeniu</h3>
+            <p>
+              Opcjonalna opieka miesięczna: aktualizacje, kopie, drobne zmiany
+              <strong>bez godzinówki</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4) FAQ (NOWA sekcja) -->
+      <section id="faq" aria-labelledby="faq-heading" class="container">
+        <h2 id="faq-heading">FAQ – najczęstsze pytania</h2>
+
+        <details>
+          <summary>Ile trwa wykonanie strony?</summary>
+          <p>
+            Wizytówka (EKO) zwykle <strong>7–10 dni roboczych</strong>, STANDARD
+            ok. 2–3 tyg., SKLEP 3–5 tyg.
+          </p>
+        </details>
+
+        <details>
+          <summary>Co muszę przygotować?</summary>
+          <p>
+            Logo, teksty (pomagam je uporządkować), zdjęcia (mogę dobrać stock),
+            domenę i hosting (mogę ogarnąć w pakiecie).
+          </p>
+        </details>
+
+        <details>
+          <summary>Czy mogę sam edytować treści?</summary>
+          <p>
+            Tak. Dostajesz krótkie <strong>szkolenie wideo</strong> i dostęp do
+            WordPressa. Proste zmiany zrobisz samodzielnie.
+          </p>
+        </details>
+
+        <details>
+          <summary>Jak wyglądają płatności?</summary>
+          <p>
+            <strong>Zaliczka 40%</strong> na start, reszta po akceptacji.
+            Faktura/rachunek, umowa i harmonogram w cenie.
+          </p>
+        </details>
+      </section>
+
+      <!-- Formularz HTML-only (demo). Produkcyjnie podłączymy backend/WordPress. -->
+
+      <form
+        class="contact-form"
+        action="mailto:t90090178@gmail.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <div class="field">
+          <label for="name">Imię i nazwisko</label>
+          <input
+            id="name"
+            name="Imię i nazwisko"
+            type="text"
+            placeholder="Jan Kowalski"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input
+            id="email"
+            name="E-mail"
+            type="email"
+            placeholder="jan@firma.pl"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="phone">Telefon</label>
+          <input
+            id="phone"
+            name="Telefon"
+            type="tel"
+            inputmode="tel"
+            placeholder="+48 600 000 000"
+            pattern="^[0-9+ ()-]{6,}$"
+          />
+        </div>
+        <div class="field">
+          <label for="type">Rodzaj projektu</label>
+          <select id="type" name="Rodzaj projektu">
+            <option>Wizytówka (EKO)</option>
+            <option>Strona firmowa (STANDARD)</option>
+            <option>Sklep internetowy (SKLEP)</option>
+            <option>Inne / nie wiem</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Opis / cele</label>
+          <textarea
+            id="msg"
+            name="Wiadomość"
+            rows="5"
+            placeholder="Kilka słów o firmie i celu strony..."
+          ></textarea>
+        </div>
+        <input
+          type="hidden"
+          name="Temat"
+          value="Zapytanie przez formularz – strona WWW"
+        />
+        <div class="actions">
+          <button class="btn" type="submit">Wyślij zapytanie</button>
+        </div>
+        <p class="muted small">
+          Uwaga: formularz wysyła wiadomość przez klienta poczty (mailto). W
+          WordPressie podłączymy profesjonalną wysyłkę.
+        </p>
+      </form>
     </main>
 
     <footer>
@@ -278,5 +351,3 @@
     <script defer src="main.js"></script>
   </body>
 </html>
-
-
