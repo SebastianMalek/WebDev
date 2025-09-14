@@ -322,3 +322,37 @@ p {
 section {
   margin-block: var(--space-3);
 }
+
+.why {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.why-card {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+}
+.why-card h3 {
+  margin: 0 0 6px;
+}
+
+#faq details {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+#faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+#faq summary:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
+#faq p {
+  margin: 10px 0 0;
+}
