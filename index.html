@@ -24,8 +24,18 @@
       content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://twojadomena.pl/" />
-    <meta property="og:image" content="https://twojadomena.pl/og-image.jpg" />
+
+    <meta
+      property="og:image"
+      content="https://SebastianMalek.github.io/WebDev/og-image.jpg"
+    />
+
+    <link rel="canonical" href="https://SebastianMalek.github.io/WebDev/" />
+    <meta
+      property="og:url"
+      content="https://SebastianMalek.github.io/WebDev/"
+    />
+
     <meta name="twitter:card" content="summary_large_image" />
 
     <script type="application/ld+json">
@@ -39,8 +49,9 @@
         "telephone": "+48605637077"
       }
     </script>
+    <link rel="preconnect" href="https://formspree.io" crossorigin />
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=6" />
     <!-- było: /favicon.svg -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -95,29 +106,26 @@
             </li>
             <li>Optymalizacja szybkości + krótkie szkolenie z obsługi.</li>
           </ul>
-
-          <h2 id="kontakt">Kontakt</h2>
-          <address>☎️ <a href="tel:+48605637077">+48 605 637 077</a></address>
-          <p>
-            ✉️
-            <a
-              class="btn"
-              href="mailto:t90090178@gmail.com?subject=Wycena%20strony%20WWW&body=Cześć%20Sebastianie,%0A%0ANazwa%20firmy:%0AZakres:%20(Wizytówka%20/%20Standard%20/%20Sklep)%0ATermin:%0ABudżet:%0A%0APozdrawiam,"
-              aria-label="Umów wycenę strony e-mailem"
-              >Umów wycenę</a
-            >
-          </p>
         </section>
 
         <aside>
           <figure>
             <img
               src="https://picsum.photos/640/420"
+              srcset="
+                https://picsum.photos/400/262 400w,
+                https://picsum.photos/640/420 640w,
+                https://picsum.photos/960/630 960w
+              "
+              sizes="(max-width: 720px) 100vw, 50vw"
               alt="Przykładowy projekt strony WWW dla małej firmy usługowej – sekcja oferty i CTA"
               width="640"
               height="420"
               loading="lazy"
+              decoding="async"
+              fetchpriority="low"
             />
+
             <figcaption>
               Makieta landing page: wyraźny nagłówek, lista korzyści i widoczny
               przycisk „Umów wycenę”.
@@ -269,66 +277,100 @@
 
       <!-- Formularz HTML-only (demo). Produkcyjnie podłączymy backend/WordPress. -->
 
-      <form
-        class="contact-form"
-        id="contact-form"
-        action="https://formspree.io/f/mgvlbewd"
-        method="POST"
-        novalidate
-      >
-        <div class="field">
-          <label for="name">Imię i nazwisko</label>
-          <input id="name" name="Imię i nazwisko" type="text" required />
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="E-mail" type="email" required />
-        </div>
-        <div class="field">
-          <label for="phone">Telefon</label>
-          <input
-            id="phone"
-            name="Telefon"
-            type="tel"
-            inputmode="tel"
-            pattern="^[0-9+ ()-]{6,}$"
-          />
-        </div>
-        <div class="field">
-          <label for="type">Rodzaj projektu</label>
-          <select id="type" name="Rodzaj projektu">
-            <option>Wizytówka (EKO)</option>
-            <option>Strona firmowa (STANDARD)</option>
-            <option>Sklep internetowy (SKLEP)</option>
-            <option>Inne / nie wiem</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="msg">Opis / cele</label>
-          <textarea id="msg" name="Wiadomość" rows="5"></textarea>
-        </div>
+      <section id="kontakt" class="container contact-section">
+        <h2>Kontakt</h2>
+        <address>☎️ <a href="tel:+48605637077">+48 605 637 077</a></address>
+        <p>
+          ✉️
+          <a
+            class="btn"
+            href="mailto:t90090178@gmail.com?subject=Wycena%20strony%20WWW"
+            >Umów wycenę</a
+          >
+        </p>
 
-        <!-- Antyspam: honeypot (niewidoczne) -->
-        <div class="field hp" aria-hidden="true">
-          <label for="website">Twoja strona (zostaw puste)</label>
-          <input
-            id="website"
-            name="website"
-            type="text"
-            tabindex="-1"
-            autocomplete="off"
-          />
-        </div>
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/mgvlbewd"
+          method="POST"
+          novalidate
+        >
+          <div class="field">
+            <label for="name">Imię i nazwisko</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
 
-        <!-- Dodatkowe meta -->
-        <input type="hidden" name="_subject" value="Zapytanie – strona WWW" />
-        <input type="hidden" name="_language" value="pl" />
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
 
-        <div class="actions">
-          <button class="btn" type="submit">Wyślij zapytanie</button>
-        </div>
-        <p id="form-status" class="muted small" aria-live="polite"></p>
-      </form>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+              pattern="^[0-9+ ()-]{6,}$"
+            />
+          </div>
+
+          <div class="field">
+            <label for="type">Rodzaj projektu</label>
+            <select id="type" name="type" autocomplete="off">
+              <option>Wizytówka (EKO)</option>
+              <option>Strona firmowa (STANDARD)</option>
+              <option>Sklep internetowy (SKLEP)</option>
+              <option>Inne / nie wiem</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="msg">Opis / cele</label>
+            <textarea
+              id="msg"
+              name="message"
+              rows="5"
+              autocomplete="off"
+            ></textarea>
+          </div>
+
+          <!-- honeypot -->
+          <div class="field hp" aria-hidden="true">
+            <label for="website">Twoja strona (zostaw puste)</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <input type="hidden" name="_subject" value="Zapytanie – strona WWW" />
+          <input type="hidden" name="_language" value="pl" />
+
+          <div class="actions">
+            <button class="btn" type="submit">Wyślij zapytanie</button>
+          </div>
+          <p id="form-status" class="muted small" aria-live="polite"></p>
+        </form>
+      </section>
     </main>
 
     <footer>
@@ -340,6 +382,6 @@
       </div>
     </footer>
 
-    <script defer src="main.js"></script>
+    <script defer src="main.js?v=6"></script>
   </body>
 </html>
