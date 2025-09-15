@@ -6,7 +6,7 @@
     <title>Sebastian Małek – Strony WWW</title>
     <meta
       name="description"
-      content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
+      content="Tworzę szybkie i czytelne strony WWW. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
     />
 
     <link rel="canonical" href="https://SebastianMalek.github.io/WebDev/" />
@@ -15,13 +15,10 @@
       content="https://SebastianMalek.github.io/WebDev/"
     />
 
-    <meta
-      property="og:title"
-      content="Sebastian Małek – Strony WWW w WordPressie"
-    />
+    <meta property="og:title" content="Sebastian Małek – Strony WWW" />
     <meta
       property="og:description"
-      content="Tworzę szybkie i czytelne strony WWW w WordPressie. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
+      content="Tworzę szybkie i czytelne strony WWW. Pomagam małym firmom zaistnieć w sieci i zdobywać klientów."
     />
     <meta property="og:type" content="website" />
 
@@ -66,73 +63,64 @@
       <div class="container">
         <h1>Sebastian Małek</h1>
         <p class="lead">
-          Tworzę <strong>strony WWW w WordPressie</strong> dla małych firm –
-          szybko, czytelnie i pod SEO.
+          Tworzę <strong>strony WWW</strong> dla małych firm – szybko i czytelne
         </p>
+
         <nav class="nav" aria-label="Główna">
-          <a class="nav-link" href="#o-mnie">O mnie</a> ·
-          <a class="nav-link" href="#oferta">Pakiety</a> ·
+          <a class="nav-link" href="#o-mnie">O mnie</a>
+          <a class="nav-link" href="#oferta">Pakiety</a>
+          <a class="nav-link" href="#dlaczego">Dlaczego ja</a>
+          <a class="nav-link" href="#faq">FAQ</a>
           <a class="nav-link" href="#kontakt">Kontakt</a>
-          <a class="nav-link" href="#dlaczego">Dlaczego ja</a> ·
-          <a class="nav-link" href="#faq">FAQ</a> ·
         </nav>
 
         <div class="hero-cta">
           <a class="btn" href="#oferta">Zobacz pakiety</a>
-          <a class="btn btn--ghost" href="#kontakt">Kontakt</a>
+          <a class="btn btn--ghost" href="#kontakt">Napisz do mnie</a>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <div class="container grid grid-2">
-        <section aria-labelledby="o-mnie">
-          <h2 id="o-mnie">O mnie</h2>
-          <p>
-            Cześć! Jestem Sebastian. Łączę estetykę z prostotą obsługi, aby
-            Twoja strona działała <em>szybko</em> i była zrozumiała dla
-            klientów.
-          </p>
-          <p class="muted">
-            Gram na gitarze, czytam sporo książek i lubię dobrać technologicznie
-            proste rozwiązania, które robią robotę.
-          </p>
+      <section id="o-mnie" class="container intro intro--card">
+        <h2>O mnie</h2>
 
-          <h3>W czym pomagam?</h3>
-          <ul>
-            <li>Projekt i wdrożenie strony na <strong>WordPressie</strong>.</li>
-            <li>
-              Skonfigurowanie formularzy, mapy, podstawowego SEO i analityki.
-            </li>
-            <li>Optymalizacja szybkości + krótkie szkolenie z obsługi.</li>
-          </ul>
-        </section>
+        <p class="intro-lead">
+          Cześć!
+          <br />
+          Jestem Sebastian.
+          <br />
+          Łączę estetykę z prostotą obsługi, aby Twoja strona działała
+          <em>szybko</em> i była zrozumiała dla klientów.
+        </p>
 
-        <aside>
-          <figure>
-            <img
-              src="https://picsum.photos/640/420"
-              srcset="
-                https://picsum.photos/400/262 400w,
-                https://picsum.photos/640/420 640w,
-                https://picsum.photos/960/630 960w
-              "
-              sizes="(max-width: 720px) 100vw, 50vw"
-              alt="Przykładowy projekt strony WWW dla małej firmy usługowej – sekcja oferty i CTA"
-              width="640"
-              height="420"
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low"
-            />
+        <p class="intro-note muted">
+          Gram na gitarze.
+          <br />
+          Czytam sporo książek.
+          <br />
+          Lubię dobrać technologicznie proste rozwiązania, które robią robotę.
+        </p>
 
-            <figcaption>
-              Makieta landing page: wyraźny nagłówek, lista korzyści i widoczny
-              przycisk „Umów wycenę”.
-            </figcaption>
-          </figure>
-        </aside>
-      </div>
+        <div class="intro-divider" aria-hidden="true"></div>
+
+        <h3>W czym pomagam?</h3>
+        <ul class="feature-list">
+          <li>Projekt i wdrożenie strony.</li>
+          <li>
+            Skonfigurowanie formularzy, mapy, podstawowego SEO i analityki.
+          </li>
+          <li>Optymalizacja szybkości + krótkie szkolenie z obsługi.</li>
+        </ul>
+
+        <ul class="tags" aria-label="Zakres prac">
+          <li>Strona WWW</li>
+          <li>SEO</li>
+          <li>Formularze</li>
+          <li>Analityka</li>
+          <li>Performance</li>
+        </ul>
+      </section>
 
       <section id="oferta" aria-labelledby="pakiety" class="container">
         <h2 id="pakiety">Pakiety</h2>
@@ -183,13 +171,12 @@
           <article class="card" aria-labelledby="p-sklep">
             <h3 id="p-sklep">SKLEP</h3>
             <p class="desc">
-              Sprzedaż online na WordPress + WooCommerce. Płatności, wysyłka i
-              prosta obsługa zamówień.
+              Sprzedaż online,płatności, wysyłka i prosta obsługa zamówień.
             </p>
             <p class="price"><span>4997</span> zł</p>
             <ul class="features">
               <li>Wszystko ze STANDARD</li>
-              <li>WooCommerce + płatności</li>
+              <li>Ecommerce + płatności</li>
               <li>Integracja kuriera</li>
             </ul>
             <a
@@ -269,7 +256,7 @@
         <details>
           <summary>Jak wyglądają płatności?</summary>
           <p>
-            <strong>Zaliczka 40%</strong> na start, reszta po akceptacji.
+            <strong>Zaliczka 50%</strong> na start, reszta po akceptacji.
             Faktura/rachunek, umowa i harmonogram w cenie.
           </p>
         </details>
@@ -281,7 +268,6 @@
         <h2>Kontakt</h2>
         <address>☎️ <a href="tel:+48605637077">+48 605 637 077</a></address>
         <p>
-          ✉️
           <a
             class="btn"
             href="mailto:t90090178@gmail.com?subject=Wycena%20strony%20WWW"
