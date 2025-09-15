@@ -1,3 +1,14 @@
+/*
+Theme Name: SMalek Landing
+Theme URI: https://projektseby.pl/
+Author: Sebastian Małek
+Author URI: https://projektseby.pl/
+Description: Jednostronicowy motyw WordPress (Pakiety, Dlaczego, FAQ, Kontakt).
+Version: 1.0.0
+License: GPL-2.0-or-later
+Text Domain: smalek-landing
+*/
+
 :root {
   --w: 960px;
 }
@@ -91,6 +102,15 @@ footer {
 footer a {
   color: #fff;
 }
+
+footer .container {
+  display: flex;
+  justify-content: center; /* środek w poziomie */
+  align-items: center; /* wyrównanie w pionie */
+  gap: 12px;
+  text-align: center;
+}
+
 ul {
   padding-left: 20px;
 }
@@ -395,3 +415,645 @@ section {
   height: 0;
   overflow: hidden;
 }
+
+/* ===== PRO UPGRADE ===== */
+
+/* Design tokens */
+:root {
+  --w: min(1100px, 92vw);
+  --surface: #fff;
+  --text: #111;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb; /* niebieski */
+  --accent-600: #1d4ed8;
+  --shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.28);
+  --r: 14px;
+}
+
+/* Layout */
+.container {
+  max-width: var(--w);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Header: lekko „szklany”, sticky, cień po scrollu */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(160%) blur(6px);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.scrolled header {
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+/* Typografia */
+h1 {
+  font-size: clamp(34px, 6vw, 54px);
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: clamp(22px, 3.2vw, 30px);
+  margin: 28px 0 12px;
+}
+.lead {
+  font-size: clamp(16px, 2.2vw, 18px);
+  color: var(--muted);
+}
+
+/* Nawigacja */
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.nav-link {
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.15s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text);
+  background: #f5f7fb;
+}
+.nav-link.active {
+  color: var(--text);
+  background: #eef2ff;
+}
+
+/* CTA */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0 6px;
+}
+.btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.15s ease;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Karty pakietów */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 12px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+.card--featured {
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -20px rgba(37, 99, 235, 0.35);
+  position: relative;
+}
+.card--featured .badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: var(--accent);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.price span {
+  font-weight: 800;
+  font-size: clamp(26px, 5vw, 34px);
+}
+.features {
+  margin: 12px 0 16px;
+  padding-left: 20px;
+}
+
+/* „Dlaczego” */
+.why {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.why-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+}
+
+/* FAQ */
+#faq details {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px 16px;
+  background: var(--surface);
+}
+#faq details + details {
+  margin-top: 10px;
+}
+#faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-right: 24px;
+}
+#faq summary::-webkit-details-marker {
+  display: none;
+}
+#faq summary::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s;
+}
+#faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Formularz */
+.contact-section {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+.contact-section address,
+.contact-section > p {
+  text-align: center;
+}
+.contact-form {
+  max-width: 680px;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 720px) {
+  .contact-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-form .field:nth-child(5),
+  .contact-form .actions {
+    grid-column: 1/-1;
+  }
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  font: inherit;
+  transition: 0.12s ease;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 0;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+.hp {
+  position: absolute;
+  left: -5000px;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Dark mode auto (opcjonalnie) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #0f141b;
+    --text: #f5f7fb;
+    --muted: #9aa6b2;
+    --border: #1f2937;
+  }
+  body {
+    background: #0b0f15;
+    color: var(--text);
+  }
+  header {
+    background: rgba(11, 15, 21, 0.7);
+    border-color: #111;
+  }
+  .nav-link:hover {
+    background: #1a2331;
+  }
+}
+/* ładniejsza karta grafiki hero */
+figure img {
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.35);
+  display: block;
+}
+figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* --- CENTROWANIE HEADERA, MENU I CTA --- */
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: 24px 18px;
+}
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* --- HERO BEZ ZDJĘCIA (JEDNA KOLUMNA) --- */
+.intro {
+  max-width: 760px; /* komfortowa szerokość czytania */
+  margin: 24px auto 8px;
+  text-align: center;
+}
+.intro p {
+  margin: 0 0 10px;
+}
+.intro h3 {
+  margin-top: 16px;
+}
+.intro-list {
+  display: inline-block; /* żeby lista nie była zbyt szeroka */
+  text-align: left; /* lepsza czytelność punktorów */
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+/* sekcje ładnie „zatrzymują się” pod sticky headerem */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* przy okazji – stopka wyśrodkowana */
+footer .container {
+  text-align: center;
+}
+footer p {
+  margin: 0;
+}
+
+#oferta {
+  margin-top: 28px;
+}
+
+/* O mnie: wyjustowane akapity */
+.intro {
+  max-width: 760px;
+  margin: 24px auto 8px;
+  /* NIE center dla całej sekcji – zostawiamy tekst "naturalnie" */
+  text-align: left;
+}
+.intro h2,
+.intro h3 {
+  /* nagłówki wciąż na środku */
+  text-align: center;
+}
+.intro p {
+  /* akapity justowane */
+  text-align: justify;
+  text-justify: inter-word; /* lepsze rozkładanie odstępów */
+  hyphens: auto; /* dzielenie wyrazów (lang="pl" już masz) */
+}
+.intro .muted {
+  /* ten drugi, "wyszarzony" akapit też */
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* lista pod "O mnie" – czytelnie do lewej */
+.intro-list {
+  display: inline-block;
+  text-align: left;
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+/* --- FIX: czytelny, nieprzezroczysty header --- */
+header {
+  /* stałe, białe tło – nic nie prześwituje */
+  background: #fff !important;
+  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: none !important;
+}
+.scrolled header {
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.28);
+}
+
+/* Kolory tekstu w headerze (kontrast 7:1+) */
+header h1 {
+  color: #0b0f15;
+}
+header .lead {
+  color: #374151;
+} /* ciemniejszy od dotychczasowego */
+.nav {
+  justify-content: center;
+}
+.nav-link {
+  color: #374151;
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #0b0f15;
+  background: #f2f4f7;
+}
+.nav-link.active {
+  color: #1d4ed8;
+  background: #e8f0ff;
+}
+
+/* CTA – czytelne na białym tle */
+.btn {
+  background: #111;
+  color: #fff;
+  border: none;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: #2563eb;
+}
+.btn--ghost {
+  background: #fff;
+  color: #0b0f15;
+  border: 1px solid #cbd5e1;
+}
+.btn--ghost:hover {
+  color: #1d4ed8;
+  border-color: #1d4ed8;
+  background: #f8fafc;
+}
+
+/* Gdy masz sticky header, kotwice nie chowają tytułów */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* na samym wierzchu: ściśle opcjonalne */
+body:not(.scrolled) header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+
+/* ===== O MNIE — premium look ===== */
+:root {
+  --accent: #2563eb;
+  --border: #1f2937; /* nadpisze się, jeśli już masz */
+  --surface-soft: rgba(37, 99, 235, 0.06);
+}
+
+/* Karta sekcji */
+.intro.intro--card {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 28px 26px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--surface-soft), transparent 70%);
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.45);
+}
+
+/* Nagłówki wyśrodkowane */
+.intro h2,
+.intro h3 {
+  text-align: center;
+}
+
+/* Akapity justowane + ładne podkreślenie słów kluczowych */
+.intro-lead,
+.intro-note {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin: 0 0 12px;
+  font-size: clamp(16px, 2.1vw, 18px);
+  line-height: 1.75;
+}
+.intro em {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, rgba(37, 99, 235, 0.22) 0);
+  padding: 0 0.06em;
+  border-radius: 2px;
+}
+
+/* Delikatny dzielnik */
+.intro-divider {
+  height: 1px;
+  max-width: 680px;
+  margin: 14px auto 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.6),
+    transparent
+  );
+}
+
+/* Lista z „check” zamiast punktorów */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px auto 6px;
+  max-width: 760px;
+}
+.feature-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin: 6px 0;
+}
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.16);
+  color: var(--accent);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Tag/kapsułki umiejętności */
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.tags li {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  opacity: 0.95;
+}
+
+/* Drobny oddech nad „W czym pomagam?” */
+.intro h3 {
+  margin-top: 14px;
+}
+
+/* Jeżeli masz tryb jasny/ciemny – zadbaj o kontrast */
+@media (prefers-color-scheme: light) {
+  :root {
+    --border: #e5e7eb;
+    --surface-soft: rgba(37, 99, 235, 0.06);
+  }
+  .intro.intro--card {
+    box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* Tags: bez kropek/markerów */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 0; /* ważne: zeruje wcięcie UL */
+  list-style: none; /* wyłącza markery */
+}
+.tags li {
+  list-style: none; /* bezpiecznik */
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  opacity: 0.95;
+}
+/* niektóre przeglądarki pokazują jeszcze ::marker – wyłączamy */
+.tags li::marker {
+  content: "";
+}
+/* NAV — floating pill */
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.06); /* subtelne tło */
+  border: 1px solid #e5e7eb;
+  backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 10px 24px -20px rgba(0, 0, 0, 0.35);
+}
+
+/* kolory linków i stany */
+.nav-link {
+  color: #374151;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: #eef2ff;
+  color: #1d4ed8;
+}
+.nav-link.active {
+  background: #e8f0ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* spójność, gdy header ma cień po scrollu */
+.scrolled .nav {
+  background: #ffffffcc;
+  border-color: #e5e7eb;
+}
+
+/* tryb ciemny (jeśli przeglądarka ma dark mode) */
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #1f2937;
+  }
+  .nav-link {
+    color: #cbd5e1;
+  }
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    background: #1f2937;
+    color: #93c5fd;
+  }
+  .nav-link.active {
+    background: #1e293b;
+    color: #60a5fa;
+  }
+}
+
+header .container {
+  align-items: center;
+  text-align: center;
+}
+.hero-cta {
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.lead {
+  color: #374151;
+}
+
+/* kolejny kod test */
