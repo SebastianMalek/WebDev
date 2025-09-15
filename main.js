@@ -1,58 +1,77 @@
-document.getElementById("y").textContent = new Date().getFullYear();
-// cień pod sticky header po lekkim scrollu
+/* Rok w stopce */
+const y = document.getElementById("y");
+if (y) y.textContent = String(new Date().getFullYear());
 
-window.addEventListener("scroll", () => {
+/* Cień pod sticky headerem */
+const toggleScrolled = () =>
   document.body.classList.toggle("scrolled", window.scrollY > 8);
-});
+toggleScrolled();
+window.addEventListener("scroll", toggleScrolled, { passive: true });
 
-// podświetlanie aktywnego linku w menu
-const links = document.querySelectorAll(".nav a");
-const targets = [...links]
+/* Podświetlanie aktywnego linku w menu */
+const navLinks = Array.from(document.querySelectorAll(".nav a")).filter((a) =>
+  (a.getAttribute("href") || "").startsWith("#")
+);
+
+const sections = navLinks
   .map((a) => document.querySelector(a.getAttribute("href")))
   .filter(Boolean);
 
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      const id = "#" + e.target.id;
-      const link = document.querySelector(`.nav a[href="${id}"]`);
-      if (!link) return;
-      if (e.isIntersecting) {
-        links.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
-      }
-    });
-  },
-  { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 }
-);
+if (sections.length && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = `#${entry.target.id}`;
+        const link = document.querySelector(`.nav a[href="${id}"]`);
+        if (!link) return;
 
-targets.forEach((t) => io.observe(t));
+        if (entry.isIntersecting) {
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 }
+  );
 
+  sections.forEach((el) => io.observe(el));
+}
+
+/* Wysyłka formularza (Formspree) */
 const form = document.getElementById("contact-form");
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const status = document.getElementById("form-status");
+
     // honeypot
     if (form.website && form.website.value.trim() !== "") {
-      status.textContent = "Błąd: podejrzenie spamu.";
+      if (status) status.textContent = "Błąd: podejrzenie spamu.";
       return;
     }
-    const data = new FormData(form);
+
     try {
       const res = await fetch(form.action, {
         method: "POST",
-        body: data,
+        body: new FormData(form),
         headers: { Accept: "application/json" },
       });
+
       if (res.ok) {
         form.reset();
-        status.textContent = "Dziękuję! Odpowiem w 24h.";
+        if (status) status.textContent = "Dziękuję! Odpowiem w 24h.";
       } else {
-        status.textContent = "Coś poszło nie tak. Napisz na e-mail.";
+        let msg = "Coś poszło nie tak. Napisz na e-mail.";
+        try {
+          const json = await res.json();
+          if (json?.errors?.length)
+            msg = json.errors.map((e) => e.message).join(", ");
+          if (json?.error) msg = json.error;
+        } catch {}
+        if (status) status.textContent = msg;
       }
     } catch {
-      status.textContent = "Błąd sieci. Spróbuj ponownie.";
+      if (status) status.textContent = "Błąd sieci. Spróbuj ponownie.";
     }
   });
 }
